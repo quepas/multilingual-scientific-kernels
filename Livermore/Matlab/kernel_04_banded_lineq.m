@@ -13,6 +13,7 @@ function kernel_04_banded_lineq(LEN_1D)
             temp = temp - xz(lw) .* y(jj);
             lw = lw + 1;
         end
+
         xz(k - 1) = y(5) .* temp;
     end
 

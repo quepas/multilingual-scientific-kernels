@@ -31,6 +31,7 @@ function kernel_08_adi_integration(LEN_1D)
             u2(kx, ky, nl2) = u2(kx, ky, nl1) + a21 .* du1(ky) + a22 .* du2(ky) + a23 .* du3(ky) + sig .* (u2(kx + 1, ky, nl1) - fw .* u2(kx, ky, nl1) + u2(kx - 1, ky, nl1));
             u3(kx, ky, nl2) = u3(kx, ky, nl1) + a31 .* du1(ky) + a32 .* du2(ky) + a33 .* du3(ky) + sig .* (u3(kx + 1, ky, nl1) - fw .* u3(kx, ky, nl1) + u3(kx - 1, ky, nl1));
         end
+
     end
 
     %! array_op

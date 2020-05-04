@@ -10,10 +10,12 @@ function kernel_23_implicit_hydro_2D(LEN_1D)
 
     %! pragma loop
     for jj = 2:6
+
         for k = 2:LEN_1D
             qa = za(k, jj + 1) .* zr(k, jj) + za(k, jj - 1) .* zb(k, jj) + za(k + 1, jj) .* zu(k, jj) + za(k - 1, jj) .* zv(k, jj) + zz(k, jj);
             za(k, jj) = za(k, jj) + fw .* (qa - za(k, jj));
         end
+
     end
 
 end

@@ -2,8 +2,8 @@ def kernel_12_first_diff(LEN_1D):
     #! init
     import numpy as np
 
-    x = np.zeros(LEN_1D);
-    y = np.random.randn(LEN_1D + 1);
+    x = np.zeros(LEN_1D)
+    y = np.random.randn(LEN_1D + 1)
 
     #! loop
     for k in range(LEN_1D):

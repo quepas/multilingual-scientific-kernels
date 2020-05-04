@@ -21,6 +21,7 @@ function kernel_02_iccg(LEN_1D)
         if (ii <= 1)
             break;
         end
+
     end
 
 end

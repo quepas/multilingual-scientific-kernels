@@ -15,24 +15,30 @@ function kernel_18_explicit_hydro_2D(LEN_1D)
 
     %! loop
     for k = 2:kn
+
         for j = 2:LEN_1D
             za(j, k) = (zp(j - 1, k + 1) + zq(j - 1, k + 1) - zp(j - 1, k) - zq(j - 1, k)) .* (zr(j, k) + zr(j - 1, k)) ./ (zm(j - 1, k) + zm(j - 1, k + 1));
             zb(j, k) = (zp(j - 1, k) + zq(j - 1, k) - zp(j, k) - zq(j, k)) .* (zr(j, k) + zr(j, k - 1)) ./ (zm(j, k) + zm(j - 1, k));
         end
+
     end
 
     for k = 2:kn
+
         for j = 2:LEN_1D
             zu(j, k) = zu(j, k) + s .* (za(j, k) .* (zz(j, k) - zz(j + 1, k)) - za(j - 1, k) .* (zz(j, k) - zz(j - 1, k)) - zb(j, k) .* (zz(j, k) - zz(j, k - 1)) + zb(j, k + 1) .* (zz(j, k) - zz(j, k + 1)));
             zv(j, k) = zv(j, k) + s .* (za(j, k) .* (zr(j, k) - zr(j + 1, k)) - za(j - 1, k) .* (zr(j, k) - zr(j - 1, k)) - zb(j, k) .* (zr(j, k) - zr(j, k - 1)) + zb(j, k + 1) .* (zr(j, k) - zr(j, k + 1)));
         end
+
     end
 
     for k = 2:kn
+
         for j = 2:LEN_1D
             zr(j, k) = zr(j, k) + t .* zu(j, k);
             zz(j, k) = zz(j, k) + t .* zv(j, k);
         end
+
     end
 
     %! array_op

@@ -10,6 +10,7 @@ function kernel_06_lin_recurrence(LEN_2D)
         for k = 1:(ii - 1)
             w(ii) = w(ii) + b(ii, k) .* w(ii - k);
         end
+
     end
 
 end
